@@ -20,7 +20,8 @@
   <script>
     function checkAccess() {
       const today = new Date();
-      const isUnlocked = today.getDate() === 7 && today.getMonth() === 7 - 1;
+      const isUnlocked = true; // 👈 Force it open for testing
+
       const password = document.getElementById("passwordInput").value.trim();
       const message = document.getElementById("loginMessage");
 
