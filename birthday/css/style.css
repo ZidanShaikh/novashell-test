@@ -1,0 +1,152 @@
+body {
+  background-color: #EDEADC;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fade {
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden-screen {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.visible-screen {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 50;
+}
+
+/* Polaroid background */
+#polaroid-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+#polaroid-wrapper img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Desktop app icons */
+.icon {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px;
+  width: 100px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  z-index: 10;
+}
+
+.icon:hover {
+  transform: scale(1.05);
+}
+
+/* ALIEN MAIL PAGE */
+#alienPage {
+  display: none; /* ✅ initially hidden */
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+#alienPage.visible-screen {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+/* Topbar of Alien Mail */
+#alienPage .topbar {
+  background-color: #1f2937; /* gray-900 */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#alienPage .topbar h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Messages section */
+#alienPage .messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Single message */
+#alienPage .message {
+  background-color: #2d3748; /* gray-800 */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Footer of Alien Mail */
+#alienPage .footer {
+  padding: 1rem;
+  background-color: #1f2937;
+  border-top: 1px solid #4b5563;
+  text-align: center;
+}
+
+#lovePage {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#emotionPage button,
+#emotionDetailPage button {
+  transition: transform 0.2s ease;
+}
+
+#emotionPage button:hover,
+#emotionDetailPage button:hover {
+  transform: scale(1.05);
+}

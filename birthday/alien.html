@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alien Mail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white h-screen flex flex-col">
+
+  <!-- Topbar -->
+  <div class="p-4 bg-gray-900 flex items-center">
+    <button onclick="window.location.href='index.html'" class="mr-4 text-purple-400 text-xl">&larr;</button>
+    <h2 class="text-2xl font-bold">Alien Mail</h2>
+  </div>
+
+  <!-- Messages -->
+  <div class="flex-1 overflow-y-auto p-4 space-y-4">
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-green-300">👽 Commander Zorlak</p>
+      <p class="text-sm mt-1">Anjali, your vibes have legally caused time loops. Please explain your enchantment powers.</p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-pink-300">🤖 Unit-X99</p>
+      <p class="text-sm mt-1">My circuits glitch when you appear. Please stop being so soft-coded.</p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-yellow-300">🐾 Alien Cat Council</p>
+      <p class="text-sm mt-1">Nova and Nyxie have achieved perfect snuggle frequency. You are the chosen one.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="p-4 border-t border-gray-700 bg-gray-900 text-center">
+    <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm" onclick="alert('🛫 Signal Sent!')">Reply to the Galaxy</button>
+  </div>
+</body>
+</html>

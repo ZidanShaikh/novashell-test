@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Lock Terminal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white h-screen flex flex-col items-center justify-center font-mono px-4 text-center">
+
+  <h1 class="text-3xl md:text-4xl font-bold mb-6 text-purple-300">🐾 NovaShell Terminal Lock</h1>
+  <p class="mb-2 text-sm text-gray-400">Access restricted until August 7th.</p>
+
+  <div class="bg-gray-900 p-6 rounded-lg shadow-md max-w-md w-full mt-6">
+    <input id="passwordInput" type="text" placeholder="Enter password..." class="w-full p-2 mb-4 rounded bg-gray-800 text-white border border-purple-500 focus:outline-none" />
+    <button onclick="checkAccess()" class="bg-purple-600 hover:bg-purple-700 w-full p-2 rounded">Unlock</button>
+    <p id="loginMessage" class="mt-4 text-red-400 text-sm"></p>
+  </div>
+
+  <script>
+    function checkAccess() {
+      const today = new Date();
+      const isUnlocked = today.getDate() === 7 && today.getMonth() === 7 - 1;
+      const password = document.getElementById("passwordInput").value.trim();
+      const message = document.getElementById("loginMessage");
+
+      // Handle prank passwords before unlock date
+      if (!isUnlocked) {
+        if (password === "1703") {
+          alert(`🐾 Nova: "Hey mother... this Zii guy told me to stop you. He's 'making' something. Wait, okay?"`);
+        } else if (password === "1903") {
+          alert(`💫 Nyxie: "HEY MOTHER!!! COME ON not here— you're wandering in too early! Me and Nova aren't letting you in!"`);
+        } else {
+          message.innerText = "⏳ Not yet, silly. Come back on August 7th.";
+        }
+        return;
+      }
+
+      // After August 7th access logic
+      if (password === "princess") {
+        window.location.href = "index.html";
+      } else if (password === "1703") {
+        alert("🐾 Nova: “Ah, this password is incorrect mother. put the code he told you.");
+      } else if (password === "1903") {
+        alert("💫 Nyxie: “Eeee! Wrong password mother put the code he told you!!”");
+        
+      } else {
+        message.innerText = "❌ Wrong password, try again chosen one.";
+      }
+    }
+  </script>
+
+</body>
+</html>

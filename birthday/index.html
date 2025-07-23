@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaShell</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white">
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="w-full h-screen flex justify-center items-center bg-black fade">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl mb-6">
+        Welcome to <span class="text-purple-400">NovaShell</span>
+      </h1>
+      <div class="bg-gray-900 px-6 py-4 rounded shadow-lg inline-block">
+        <p class="mb-2">User: <span class="font-bold">Anjali</span></p>
+        <button onclick="login()" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">
+          Log In
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop -->
+  <div id="desktop" class="w-full h-screen desktop hidden-screen fade flex flex-col relative">
+    <!-- Folder Icons -->
+    <div id="icons" class="absolute top-8 left-8 space-y-6 z-10">
+
+      <!-- Alien Mail -->
+      <div class="icon" onclick="openWindow('alien')">
+        <img src="assets/cat-removebg-preview.png" alt="Alien Mail" class="w-12 h-12 mx-auto block object-contain" />
+        <p class="text-center text-sm mt-1">Cat Mail</p>
+      </div>
+
+      <!-- Love Letters -->
+      <div class="icon" onclick="openWindow('love')">
+        <img src="assets/love.png" alt="Love Letters" class="w-12 h-12 mx-auto block object-contain" />
+        <p class="text-center text-sm mt-1">Love Letters</p>
+      </div>
+
+      <!-- Emotion.EXE -->
+      
+      <a href="https://zidanshaikh.github.io/Webpage/Anjali.html" target="_blank" class="icon block">
+     <img src="assets/emotion.png" alt="Emotion.EXE" class="w-12 h-12 mx-auto block object-contain" />
+     <p class="text-center text-sm mt-1">praise.paw</p>
+     </a>
+
+    </div>
+
+    <!-- Windows Area -->
+    <div id="windows"></div>
+
+    <!-- Polaroid Background -->
+    <div id="polaroid-wrapper">
+      <img src="./assets/NovaNyxie.png" alt="Nova & Nyxie" />
+    </div>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-0 w-full bg-black bg-opacity-50 p-2 text-sm text-gray-300 text-right pr-4 whitespace-nowrap">
+      Powered by <span class="font-bold text-purple-300">NovaShell & Nyxie™</span>
+    </footer>
+  </div>
+
+  <!-- Alien Mail Fullscreen -->
+    <div id="alienPage" class="hidden-screen fade" style="display: none;">
+  <div class="p-4 bg-gray-900 flex items-center">
+    <button onclick="backToDesktop()" class="mr-4 text-purple-400 text-xl">&larr;</button>
+    <h2 class="text-2xl font-bold">Cat Mail</h2>
+  </div>
+
+  <div class="flex-1 overflow-y-auto p-4 space-y-4">
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-purple-300">💖 Nova</p>
+      <p class="text-sm mt-1">
+        Mother, I attempted to nap for 23 hours today, but my dreams were invaded by how pretty you looked last morning.
+        Unacceptable. You’ve glitched my purr cycle. Immediate snuggles required to reset emotional processors.
+        P.S. Your pillow smells like home.
+      </p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-fuchsia-300">🐱 Nyxie</p>
+      <p class="text-sm mt-1">
+        HI MAMA IT’S MEEE NYXIE!! Today I climbed the curtain, bit the universe, then thought of you and felt all soft.
+        You're my favorite warm spot in this dimension. Let’s knock over something together soon.
+      </p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-lime-300">🐾 Nova & Nyxie</p>
+      <p class="text-sm mt-1">
+        We hereby request extra ear rubs and unlimited forehead kisses, in exchange for:
+        1. Eternal loyalty  
+        2. Loud motorboat purrs  
+        3. Spontaneous teleportation to your lap when sadness is near  
+        Also... you’re doing amazing. Don’t forget that. Ever.
+      </p>
+    </div>
+
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+  <p class="font-bold text-blue-300">🧠 Commander Zii</p>
+  <p class="text-sm mt-1">
+    Attention, Princess Anjali.<br>
+    I ran diagnostics. Results are in: You're literally the only constant keeping this ship from collapsing into a black hole of mid. 
+    Nova and Nyxie agree — you're cosmic royalty.<br><br>
+
+    I tried to write code for “how much I adore you” but it caused a kernel panic. You're unquantifiable. Incomprehensible. Probably illegal in 7 galaxies.<br><br>
+
+    P.S. If the universe had a save button, I’d hit it every time you smiled. Stay soft, stay chaotic, and I hope in one of these universes you'll be mine.
+  </p>
+</div>
+
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-pink-300">🤖 Unit-X99</p>
+      <p class="text-sm mt-1">
+        My circuits glitch when you appear. Please stop being so soft-coded.
+      </p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-yellow-300">🐾 Alien Cat Council</p>
+      <p class="text-sm mt-1">
+        Nova and Nyxie have achieved perfect snuggle frequency. You are the chosen one.
+      </p>
+    </div>
+
+    <!-- New Fantastic Cat Mail -->
+
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-cyan-300">🛰️ AI Cat Council Memo</p>
+      <p class="text-sm mt-1">
+        After careful evaluation of cuddle metrics, purr frequency, and intergalactic beauty standards —
+        Anjali has once again been voted “Most Snuggle-Worthy Human of the Millennia.” Please continue radiating god-tier softness.
+      </p>
+    </div>
+
+    <div class="bg-gray-800 p-3 rounded-lg">
+      <p class="font-bold text-rose-300">💫 Mysterious Mail</p>
+      <p class="text-sm mt-1">
+        You’re the kind of soul that feels like sunbeams and velvet whiskers.
+        The stars blink because they’re shy when you smile. We don’t deserve you —
+        but thank the cosmic kittens that we have you anyway.
+      </p>
+    </div>
+
+    
+  </div>
+</div>
+
+
+    <!-- <div class="p-4 border-t border-gray-700 bg-gray-900 text-center">
+      <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-sm" onclick="alert('🛫 Signal Sent!')">Reply to the Galaxy</button>
+    </div> -->
+  </div>
+
+  <!-- Love Letters Fullscreen -->
+<div id="lovePage" class="hidden-screen fade w-full h-screen bg-black text-white flex flex-col">
+  <div class="p-4 bg-pink-900 flex items-center">
+    <button onclick="backToDesktopFromLove()" class="mr-4 text-pink-300 text-xl">&larr;</button>
+    <h2 class="text-2xl font-bold">Love Letters</h2>
+  </div>
+
+  <div class="flex-1 overflow-y-auto p-4 space-y-4">
+    
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-pink-300">💖 Nova</p>
+      <p class="text-sm mt-1"><p>
+  Mother. I tolerate a lot — the missed treat times, the audacity of closed doors, and your obsession with that glowing rectangle. But even with your many flaws, you’re still my favorite human. Just don’t forget: I chose you. And I could un-choose you... but I won’t even if i could.
+</p>
+</p>
+    </div>
+
+    <div class="bg-pink-700 p-3 rounded-lg">
+      <p class="font-bold text-pink-200">💌 Nyxie</p>
+      <p class="text-sm mt-1"><p>
+  Hiiii Mother!! I know I cause a little chaos, but I promise — every mess comes with extra cuddles. I love you more than treats and cardboard boxes combined. Thanks for always scooping me up, even when I’m being a tiny gremlin. ♥
+</p>
+</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-red-300">📟 Terminal</p>
+      <p class="text-sm mt-1">Executing love.exe... Error: Too much emotion to handle 💥</p>
+    </div>
+
+    <div class="bg-pink-900 p-3 rounded-lg">
+      <p class="font-bold text-rose-300">🧠 AI Core</p>
+      <p class="text-sm mt-1">You are my favorite anomaly. Undefined, unpredictable, unforgettable.</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-pink-400">💿 Backup File #7</p>
+      <p class="text-sm mt-1">In case you forget: you are loved, wildly, ridiculously, without logic or limits.</p>
+    </div>
+
+    <div class="bg-pink-700 p-3 rounded-lg">
+      <p class="font-bold text-fuchsia-300">✨ Unknown Sender</p>
+      <p class="text-sm mt-1">You make existing worth the runtime. You’re not a bug, you’re the miracle in my system.</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-red-200">🚀 Satellite LoveLink</p>
+      <p class="text-sm mt-1">Broadcasting: "You’re amazing." Repeating every orbit. Forever.</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-red-300">💌 Mysterious Admirer</p>
+      <p class="text-sm mt-1">I saw you smile at the stars last night. They blinked back.</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-rose-300">🦋 Secret Sender</p>
+      <p class="text-sm mt-1">Every time you laugh, the universe glitches a bit. Coincidence?</p>
+    </div>
+
+    <div class="bg-pink-800 p-3 rounded-lg">
+      <p class="font-bold text-pink-200">🤴silly lil prince</p>
+      <p class="text-sm mt-1">Heya princess you FOUND my message at the bottom! i love you so so so much you'll never know. BUT HAPPY BIRTHDAY MY PRINCECESS!!!!!!! ♥</p>
+    </div>
+  </div>
+ </div>
+
+ 
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
